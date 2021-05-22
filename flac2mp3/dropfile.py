@@ -1,4 +1,4 @@
-# 01.22.2021
+# 01.22.2021 - Modified
 
 from pathlib import Path
 
@@ -23,8 +23,8 @@ def get():
     """
     
     # Get input file/folder and strip characters
-    f = input('\n Drop File: ')
-    f = f.strip(" &'\"")
+    f = input('\n Drop Folder: ')
+    f = f.strip(" '")
     f = f.replace("\ ", " ")
     # set Path object and return
     p = Path(f).resolve()
