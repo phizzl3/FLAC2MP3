@@ -21,6 +21,7 @@ def get():
         - p.stem = filename excluding extension
         - p.suffix = file extension
     """
+    #NOTE: Updated stripped/replaced characters
     
     # Get input file/folder and strip characters
     f = input('\n Drop Folder: ')
