@@ -2,9 +2,13 @@
 """
 Gets a source folder and searches it for FLAC files. Converts FLAC files
 to mp3 files in the same folder. 
+
+You can pass the directory to the script at the command line or the script 
+will request it at runtime. 
 """
 import subprocess
 import time
+import sys
 from os import path
 from pathlib import Path
 
@@ -63,10 +67,16 @@ def convert_files(fl: list) -> None:
 
 def main() -> None:
     """
-    Call all the functions to search for FLAC files and convert them to mp3.
+    Gets the folder containing the FLAC files via terminal argument or via 
+    user input, then calls all the functions to search for FLAC files and 
+    converts them to mp3.
     """
-    # Get source folder
-    source_folder = get_folder()
+    # Check for command line arguments
+    if sys.argv[1]:
+        source_folder = sys.argv[1]
+    else:
+        # Get source folder via user input/drag-and-drop
+        source_folder = get_folder()
     # Search source folder for FLAC files and generate a list.
     flac_list = get_source_files(source_folder)
     # If the list of files isn't empty, show number found and convert
