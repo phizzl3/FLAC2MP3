@@ -72,9 +72,9 @@ def main() -> None:
     converts them to mp3.
     """
     # Check for command line arguments
-    if sys.argv[1]:
+    try:
         source_folder = sys.argv[1]
-    else:
+    except IndexError:
         # Get source folder via user input/drag-and-drop
         source_folder = get_folder()
     # Search source folder for FLAC files and generate a list.
