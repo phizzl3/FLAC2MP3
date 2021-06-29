@@ -7,9 +7,8 @@ You can pass the directory to the script at the command line or the script
 will request it at runtime. 
 """
 import subprocess
-import time
 import sys
-from os import path
+import time
 from pathlib import Path
 
 import dropfile
